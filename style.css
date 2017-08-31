@@ -15,18 +15,6 @@ a {
     text-decoration: none;
 }
 
-div#left {
-    width: 45%;
-    float: left;
-    text-align: left;
-}
-
-div#right {
-    width: 45%;
-    float: right;
-    text-align: right;
-}
-
 a:visited {
     color: #4e4e4e;
 }
@@ -134,6 +122,28 @@ blockquote .name {
     display: none;
 }
 
+/**/
+div#left {
+    width: 45%;
+    float: left;
+    text-align: left;
+}
+
+div#left div {
+    padding-left: 20px;
+}
+
+div#right {
+    width: 45%;
+    float: right;
+    text-align: right;
+}
+
+div#right div {
+    padding-right: 20px;
+}
+/**/
+
 @media (max-width: 1000px) {
     .header {
         font-size: 1.66em;
@@ -141,6 +151,12 @@ blockquote .name {
 
     h2 {
         font-size: 3em;
+    }
+
+    div#left, div#right {
+        clear: both;
+        width: 100%;
+        margin-top: 40px;
     }
 }
 
