@@ -158,6 +158,10 @@ div#right div {
         width: 100%;
         margin-top: 40px;
     }
+
+    div#left div, div#right div {
+        padding: 0px;
+    }
 }
 
 @media (max-width: 500px) {
