@@ -124,23 +124,23 @@ ul {
 }
 
 div#left {
-    width: 45%;
+    width: 48%;
     float: left;
     text-align: left;
 }
 
 div#left div {
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 div#right {
-    width: 45%;
+    width: 48%;
     float: right;
     text-align: right;
 }
 
 div#right div {
-    padding-right: 20px;
+    padding-right: 25px;
 }
 /**/
 
