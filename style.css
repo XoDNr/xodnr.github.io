@@ -43,10 +43,6 @@ h1 {
     margin: 0;
 }
 
-ul {
-    margin-top: -10px;
-}
-
 .contact-header {
     font-weight: bold;
 }
@@ -123,6 +119,10 @@ blockquote .name {
 }
 
 /**/
+ul {
+    margin-top: -10px;
+}
+
 div#left {
     width: 45%;
     float: left;
