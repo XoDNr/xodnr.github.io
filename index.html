@@ -1,249 +1,530 @@
 <!DOCTYPE HTML>
-<html lang="ko">
+<html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TeddyKim</title>
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans" rel="stylesheet" type="text/css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+    <title>Richard Hendriks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <style type="text/css">
+        @import url(
+        https://fonts.googleapis.com/css?family=Lato:400,700
+        );
+
+        body {
+            background: #fff;
+            font-family: Lato, sans-serif;
+            margin: 0 0 80px;
+        }
+
+        a {
+            color: #2ecc71;
+        }
+
+        a:focus,
+        a:hover {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+
+        p {
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        p + p {
+            margin-top: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-top: 0
+        }
+
+        section {
+            margin-top: 30px;
+        }
+
+        li {
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        li:before {
+            content: "\f052";
+            float: left;
+            font: 13px Octicons;
+            margin-top: 6px;
+            margin-left: -20px;
+            opacity: .1;
+            position: absolute;
+        }
+
+        blockquote {
+            border-left: 5px solid #e7e9ec;
+            font-size: 14px;
+        }
+
+        em {
+            color: #95a5a6;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        h4 span:first-child {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 750px;
+            padding: 0 30px;
+        }
+
+        .col-sm-6 {
+            margin-bottom: 10px;
+        }
+
+        .col-sm-12 h4 {
+            margin-top: 12px;
+        }
+
+        .col-sm-12 + .col-sm-12 {
+            margin-top: 30px;
+        }
+
+        #header {
+            background: #f4f6f6;
+            padding: 50px 0;
+            margin-bottom: 30px;
+        }
+
+        #header h2 {
+            color: #95a5a6;
+            font-size: 24px;
+        }
+
+        #content h3 {
+            color: #f1c40f;
+            font-size: 26px;
+            margin-top: -4px;
+        }
+
+        #content aside {
+            text-align: right;
+            padding-right: 30px;
+        }
+
+        #profiles .network {
+            text-transform: capitalize;
+        }
+
+        #work .position,
+        #volunteer .position {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        #education .area {
+            font-weight: bold;
+        }
+
+        #education .area:before {
+            content: "\f0d7";
+            font: 16px Octicons;
+            margin-right: 6px;
+        }
+
+        #education .studyType {
+            margin-left: 25px;
+        }
+
+        #awards .summary,
+        #publications .summary {
+            margin-top: 8px;
+        }
+
+        #publications .website a:before {
+            content: attr(href);
+        }
+
+        @media (min-width: 480px) {
+            .strike-through {
+                border-top: 1px solid #f4f6f6;
+                height: 20px;
+                margin-top: 12px;
+                margin-bottom: -2px;
+                position: relative;
+            }
+
+            .strike-through span,
+            .strike-through a {
+                background: #fff;
+                position: absolute;
+            }
+
+            .strike-through span:first-child {
+                padding-right: 20px;
+                margin-top: -12px;
+            }
+
+            .strike-through span + span {
+                font-size: 14px;
+                margin-top: -10px;
+                padding-left: 20px;
+                right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-sm-6:last-child {
+                margin-bottom: 0px;
+            }
+
+            #content aside {
+                margin-bottom: 20px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            #publications .website a:before {
+                content: "View publication";
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            .date {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            .strike-through span:first-child {
+                margin-bottom: 7px;
+            }
+
+            .strike-through span {
+                display: block;
+            }
+
+            #header {
+                margin-bottom: 10px;
+                padding: 40px 0;
+            }
+
+            #actions {
+                display: none;
+            }
+        }
+
+    </style>
 </head>
 <body>
-<div class="header">
-    <h1>김태욱, Teddy</h1>
-    <h3 class="label">Hacker</h3>
-    <div class="contact-header">Seoul, Korea<br>
-        <!--2712 Broadway St-->
-    </div>
-    <div id="contact">
-        <br>
-        <div class="contact-header">
-            EMAIL <span class="responsive-hidden">•</span> <span class="responsive-show"><br></span><a
-                href="mailto:xodnr631@gmail.com" target="_blank">xodnr631@gmail.com</a> <span
-                class="responsive-show"><br><br></span>
-        </div>
-        <div class="contact-header">
-            PHONE <span class="responsive-hidden">•</span> <span class="responsive-show"><br></span>010-3230-9051 <span
-                class="responsive-show"><br><br></span>
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-sm-push-3">
+                <h1>
+                    Richard Hendriks
+                </h1>
+                <h2>
+                    Programmer
+                </h2>
+            </div>
         </div>
     </div>
-    <br>
-    <div id="profiles">
-        <div class="contact-header">PROFILES</div>
-        <br>
-        <p class="profile"><a href="https://www.facebook.com/xodnr" target="_blank" class="profile">FaceBook</a></p>
-        <p class="profile"><a href="https://www.linkedin.com/in/%ED%83%9C%EC%9A%B1-%EA%B9%80-5356b7111/" target="_blank" class="profile">Linkedin</a></p>
-        <p class="profile"><a href="https://speakerdeck.com/teddykims" target="_blank" class="profile">SpeakerDeck</a>
-        </p>
-    </div>
+</header>
+<div id="content" class="container">
+    <section id="contact" class="row">
+        <aside class="col-sm-3">
+            <h3>Contact</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <strong>Email</strong>
+                    <div class="email">richard.hendriks@mail.com</div>
+                </div>
+                <div class="col-sm-6">
+                    <strong>Phone</strong>
+                    <div class="phone">(912) 555-4321</div>
+                </div>
+                <div class="col-sm-6">
+                    <strong>Website</strong>
+                    <div class="website">
+                        <a href="http://richardhendricks.com">http://richardhendricks.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="row">
+        <aside class="col-sm-3">
+            <h3>About</h3>
+        </aside>
+        <div class="col-sm-9">
+            <p>Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners
+                and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While
+                his work focuses on applied information theory, mostly optimizing lossless compression schema of both
+                the length-limited and adaptive variants, his non-work interests range widely, everything from quantum
+                computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited”
+                conversation!</p>
+        </div>
+    </section>
+    <section id="profiles" class="row">
+        <aside class="col-sm-3">
+            <h3>Profiles</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <strong class="network">
+                        Twitter
+                    </strong>
+                    <div class="username">
+                        neutralthoughts
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <strong class="network">
+                        SoundCloud
+                    </strong>
+                    <div class="username">
+                        <div class="url">
+                            <a href="https://soundcloud.com/dandymusicnl">dandymusicnl</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="work" class="row">
+        <aside class="col-sm-3">
+            <h3>Work</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="strike-through">
+                        <span>Pied Piper</span>
+                        <span class="date">2013-12-01 — 2014-12-01</span>
+                    </h4>
+                    <div class="website pull-right">
+                        <a href="http://piedpiper.com">http://piedpiper.com</a>
+                    </div>
+                    <div class="position">
+                        CEO/President
+                    </div>
+                    <div class="summary">
+                        <p>Pied Piper is a multi-platform technology based on a proprietary universal compression
+                            algorithm that has consistently fielded high Weisman Scores™ that are not merely
+                            competitive, but approach the theoretical limit of lossless compression.</p>
+                    </div>
+                    <h4>Highlights</h4>
+                    <ul class="highlights">
+                        <li class="bullet">Build an algorithm for artist to detect if their music was violating copy
+                            right infringement laws
+                        </li>
+                        <li class="bullet">Successfully won Techcrunch Disrupt</li>
+                        <li class="bullet">Optimized an algorithm that holds the current world record for Weisman
+                            Scores
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="volunteer" class="row">
+        <aside class="col-sm-3">
+            <h3>Volunteer</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="strike-through">
+                        <span>CoderDojo</span>
+                        <span class="date">2012-01-01 — 2013-01-01</span>
+                    </h4>
+                    <div class="website pull-right">
+                        <a href="http://coderdojo.com/">http://coderdojo.com/</a>
+                    </div>
+                    <div class="position">
+                        Teacher
+                    </div>
+                    <div class="summary">
+                        <p>Global movement of free coding clubs for young people.</p>
+                    </div>
+                    <h4>Highlights</h4>
+                    <ul class="highlights">
+                        <li class="bullet">Awarded 'Teacher of the Month'</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="row">
+        <aside class="col-sm-3">
+            <h3>Education</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="strike-through">
+                        <span>University of Oklahoma</span>
+                        <span class="date">2011-06-01 — 2014-01-01</span>
+                    </h4>
+                    <div class="area">
+                        Information Technology
+                    </div>
+                    <div class="studyType">
+                        Bachelor
+                    </div>
+                    <h4>Courses</h4>
+                    <ul class="courses">
+                        <li>DB1101 - Basic SQL</li>
+                        <li>CS2011 - Java Introduction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="awards" class="row">
+        <aside class="col-sm-3">
+            <h3>Awards</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="strike-through">
+                        <span>Digital Compression Pioneer Award</span>
+                    </h4>
+                    <div class="date pull-right">
+                        <em>Awarded</em>
+                        2014-11-01
+                    </div>
+                    <div class="awarder">
+                        <em>by</em>
+                        <strong>Techcrunch</strong>
+                    </div>
+                    <div class="summary">
+                        There is no spoon.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="publications" class="row">
+        <aside class="col-sm-3">
+            <h3>Publications</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="strike-through">
+                        <span>Video compression for 3d media</span>
+                        <span class="date">2014-10-01</span>
+                    </h4>
+                    <div class="website pull-right">
+                        <a href="http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"></a>
+                    </div>
+                    <div class="publisher">
+                        <em>Published by</em>
+                        <strong>Hooli</strong>
+                    </div>
+                    <div class="summary">
+                        <p>Innovative middle-out compression algorithm that changes the way we store data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="row">
+        <aside class="col-sm-3">
+            <h3>Skills</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="name">
+                        <h4>Web Development</h4>
+                    </div>
+                    <ul class="keywords">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <div class="name">
+                        <h4>Compression</h4>
+                    </div>
+                    <ul class="keywords">
+                        <li>Mpeg</li>
+                        <li>MP4</li>
+                        <li>GIF</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="languages" class="row">
+        <aside class="col-sm-3">
+            <h3>Languages</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="language">
+                        <strong>English</strong>
+                    </div>
+                    <div class="fluency">
+                        Native speaker
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="interests" class="row">
+        <aside class="col-sm-3">
+            <h3>Interests</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="name">
+                        <h4>Wildlife</h4>
+                    </div>
+                    <ul class="keywords">
+                        <li>Ferrets</li>
+                        <li>Unicorns</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="references" class="row">
+        <aside class="col-sm-3">
+            <h3>References</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <blockquote class="reference">
+                        <p>It is my pleasure to recommend Richard, his performance working as a consultant for Main St.
+                            Company proved that he will be a valuable addition to any company.</p>
+                        <p class="name">
+                            <strong>— Erlich Bachman</strong>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-<div class="main">
-    <div id="left">
-        <!--<div id="about">-->
-        <!--<h2><i class="fa fa-user left" aria-hidden="true"></i> ABOUT</h2>-->
-        <!--<div>-->
-        <!--<p></p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <div id="skills">
-            <h2><i class="fa fa-tasks left" aria-hidden="true"></i> SKILLS</h2>
-            <div>
-                <h3 class="skills">Language</h3>
-                <span class="keywords">HTML</span>
-                <span class="keywords">CSS</span>
-                <span class="keywords">JavaScript</span>
-                <span class="keywords">PHP</span>
-                <span class="keywords">Node.js</span>
-                <span class="keywords">PHP-Codeigniter</span>
-                <span class="keywords">PHP-Laravel</span>
-                <span class="keywords">Python-Django</span>
-                <span class="keywords">Go</span>
-                <span class="keywords">Ruby on Rails</span>
-                <span class="keywords">C</span>
-                <span class="keywords">SQL</span>
-                <span class="keywords">SQL-MySQL</span>
-                <span class="keywords">SQL-MariaDB</span>
-                <span class="keywords">VisualBasic</span>
-                <span class="keywords">Delphi</span>
-                <h3 class="skills">Tools</h3>
-                <span class="keywords">AWS</span>
-                <span class="keywords">Azure</span>
-                <span class="keywords">NCloud</span>
-                <span class="keywords">Docker</span>
-                <span class="keywords">BlueMix</span>
-                <span class="keywords">Github</span>
-                <span class="keywords">Bitbucket</span>
-                <span class="keywords">GitLab</span>
-                <span class="keywords">Trello</span>
-                <span class="keywords">Jandi</span>
-                <span class="keywords">Slack</span>
-                <span class="keywords">GDB</span>
-                <span class="keywords">IDA</span>
-            </div>
-            <br/>
-        </div>
-        <div id="work">
-            <h2><i class="fa fa-suitcase left" aria-hidden="true"></i> TEAMS</h2>
-            <div>
-                <h3>Seoul.js</h3>
-                <h4>2017</h4>
-                <h3>코딩클럽 (CodingClub) 1기</h3>
-                <h4>2015</h4>
-                <h3>서울융합인재사관학교 2기</h3>
-                <h4>2014 ~ 2015</h4>
-                <h3>KSIA, 한국 학생 IT 연합 (Korea Student Information technology Alliance)</h3>
-                <h4>2012 ~ 2015</h4>
-                <ul>
-                    <li>2012 창립</li>
-                    <li>2014 - 2015 부대표 활동</li>
-                </ul>
-                <h3>Pwn2play</h3>
-                <h4>2013</h4>
-                <ul>
-                    <li>2013 국제해킹방어대회 코드게이트 12등</li>
-                </ul>
-                <h3>WiseGuys</h3>
-                <h4>2012</h4>
-                <h3>Sur3x5f</h3>
-                <h4>2012</h4>
-            </div>
-            <br/>
-        </div>
-        <div id="references">
-            <h2><i class="fa fa-gears left" aria-hidden="true"></i> PROJECTS</h2>
-            <div>
-                <h3>"OdingA" 앱 서비스 서버 + 인트라넷 웹</h3>
-                <h4>HTML, CSS, JS, PHP, Python-Django</h4>
-                <h3>"toyUnboxing" 앱 서비스 서버 + 인트라넷 웹</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-                <h3>"AddCampus" 웹 서비스 + 인트라넷 웹</h3>
-                <h4>HTML, CSS, JS, PHP, Node.js</h4>
-                <h3>"AddVance" API, 채팅 서버</h3>
-                <h4>PHP-Codeigniter, Node.js</h4>
-                <h3>"Wion" 인트라넷 웹</h3>
-                <h4>HTML, CSS, JS</h4>
-                <h3>"Lawill" 변호사-의뢰인 중계 웹/서버</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-                <h3>"AValue" 부동산 인트라넷 웹/서버</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-                <h3>한국형 "Craig's List" 중고 쇼핑몰 웹/서버</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-                <h3>"YZLab" 의료 물품 쇼핑몰 웹/서버</h3>
-                <h4>WordPress</h4>
-                <h3>"FirstBike" 자전거 쇼핑몰 웹/서버</h3>
-                <h4>WordPress</h4>
-                <h3>"HereWeSolve" 여행 중계 웹/서버</h3>
-                <h4>WordPress</h4>
-                <h3>"작가의 탄생" 웹/서버</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-                <h3>"동아 시스템" 산업용 밸브 홍보 웹/서버</h3>
-                <h4>HTML, CSS, JS</h4>
-                <h3>"WizSpell" 게임 홍보 웹/서버</h3>
-                <h4>WordPress</h4>
-                <h3>논문 투고 인트라넷 웹/서버 + PDF 출력 서비스</h3>
-                <h4>HTML, CSS, JS, PHP-Codeigniter</h4>
-                <h3>"NanuBook" 동영상 관리 웹/서버</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-                <h3>대학생 대외 활동 리뷰 웹/서버</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-                <h3>"EnergyLab" 쇼핑몰 웹</h3>
-                <h4>HTML, CSS, JS</h4>
-                <h3>"NanuGuestHouse" 게스트하우스 웹/서버</h3>
-                <h4>WordPress</h4>
-                <h3>"NanuJob" 교육 스타트업 웹/서버</h3>
-                <h4>HTML, CSS, JS, PHP</h4>
-            </div>
-            <br/>
-        </div>
-        <br/>
-    </div>
-    <div id="right">
-        <div id="work">
-            <h2>WORKS <i class="fa fa-suitcase right" aria-hidden="true"></i></h2>
-            <div>
-                <h3>휴마트컴퍼니, HumartCompany</h3>
-                <h4>2014.11 ~ -ing</h4>
-                <h3>나누잡, Nanujob</h3>
-                <h4>2014.03 ~ 2014.10</h4>
-            </div>
-            <br/>
-        </div>
-        <div id="volunteer">
-            <h2>SPEAKERS <i class="fa fa-child right" aria-hidden="true"></i></h2>
-            <div>
-                <h3>"심리상담과 IT"</h3>
-                <h4>2018.06.30 - Psygrams 2018</h4>
-                <h3>"소프트웨어와 미래 기술"</h3>
-                <h4>2018.05.26 - 2018년, 5월 소프트웨어에 물들다</h4>
-                <h3>"개발자의 인공지능 뽀개기"</h3>
-                <h4>2017.11.04 - Aegis 10주년 Elite Seminar</h4>
-                <h3>"개발자의 인공지능 뽀개기"</h3>
-                <h4>2017.10.15 - 피자뽀개기</h4>
-                <h3>"오늘 내일 바쁜 개발자를 위한 미래 탐방기"</h3>
-                <h4>2017.08.26 - 2017년 8월 IT 네트워킹 정모</h4>
-                <h3>"오늘 내일 바쁜 개발자를 위한 미래 탐방기"</h3>
-                <h4>2017.08.20 - GDG Campus Summer Party</h4>
-                <h3>"소프트웨어와 미래기술"</h3>
-                <h4>2017.05.27 - 2017년, 5월 소프트웨어에 물들다</h4>
-                <h3>"스타트업 개발자의 이야기"</h3>
-                <h4>2016.06.12 - KSIA 제13회 IT4U 개발강연회</h4>
-                <h3>"스타트업 개발자의 이야기"</h3>
-                <h4>2016.05.20 - 경기대학교 외부 강의</h4>
-                <h3>"풀스택 개발자의 스타트업 창업기"</h3>
-                <h4>2015.11.29 - KSIA 내부 세미나</h4>
-                <h3>"웹 프로그래밍 공부 방법"</h3>
-                <h4>2015.03.08 - KSIA 내부 세미나</h4>
-                <h3>"웹 프로그래밍 공부 방법"</h3>
-                <h4>2015.02.24 - KSIA 내부 세미나</h4>
-                <h3>"창업을 한다는 것"</h3>
-                <h4>2014.08.11 - KSIA 내부 세미나</h4>
-                <h3>"무선 네트워크 해킹과 보안"</h3>
-                <h4>2013.08.17 - 제8회 해킹캠프</h4>
-                <h3>"리눅스 최신 보안시스템의 이해"</h3>
-                <h4>2013.04.03 - 코드게이트 주니어</h4>
-                <h3>"리눅스 메모리 보호기법의 이해"</h3>
-                <h4>2013.02.23 - 제7회 해킹캠프</h4>
-            </div>
-            <br/>
-        </div>
-        <div id="teach">
-            <h2>REFERENCES <i class="fa fa-group right" aria-hidden="true"></i></h2>
-            <div>
-                <h3>"프론트-백엔드 서버 겉핥기 4기" 스터디 진행</h3>
-                <h4>2017.10.31 ~ 2017.11.21</h4>
-                <h3>"휴학학교 1기" 스터디 진행</h3>
-                <h4>2017.10.11 ~ 2017.11.01</h4>
-                <h3>"프론트-백엔드 서버 겉핥기 3기" 스터디 진행</h3>
-                <h4>2017.08.03 ~ 2017.08.30</h4>
-                <h3>"프론트-백엔드 서버 겉핥기 2기" 스터디 진행</h3>
-                <h4>(DATE)</h4>
-                <h3>"프론트-백엔드 서버 겉핥기 1기" 스터디 진행</h3>
-                <h4>(DATE)</h4>
-                <h3>"현장(실무)에서의 개발 경험기!" 세미나 주최</h3>
-                <h4>2015.06.26 - 코딩클럽 6월</h4>
-                <h3>"그로스해킹으로 배우는 코딩의 의미!" 세미나 주최</h3>
-                <h4>2015.05.29 - 코딩클럽 5월</h4>
-                <h3>"KSIA 웹 프로그래밍 2기" 스터디 진행</h3>
-                <h4>(DATE)</h4>
-                <h3>"KSIA 웹 프로그래밍 1기" 스터디 진행</h3>
-                <h4>(DATE)</h4>
-                <h3>2013 국제해킹방어대회 코드게이트 12등</h3>
-                <h4>2013.05.29</h4>
-            </div>
-            <br/>
-        </div>
-        <br/>
-    </div>
-</div>
-
-<footer>
-    <hr/>
-    TeddyKims
-    <br/>
-    Download on <a target="_blank" href="https://github.com/XoDNr/SimpleResumeWithNodeJS">https://github.com/XoDNr/SimpleResumeWithNodeJS</a>
-</footer>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 </body>
 </html>
